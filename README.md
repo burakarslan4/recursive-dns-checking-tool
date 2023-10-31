@@ -1,4 +1,4 @@
-# bulk-recursive-dns
+# Recursive DNS Checking Tool for Subnets
 **Script Purpose:**
 
 **This script detects recursive DNS queries on a network and sends an email with the IP addresses that respond to those queries. This helps enhance network security by preemptively addressing potentially malicious requests.**
@@ -46,3 +46,5 @@ This script is designed to perform the following tasks:
 - Ensure that the necessary email configuration details are accurate and allowed by your email service provider.
 
 In summary, this script is a tool for checking and notifying you of valid IP addresses within specific subnets, and it can be customized to suit your needs by adjusting the email configuration and the list of subnets to scan.
+
+**This project has been written with the assistance of ChatGPT 3.5.**
