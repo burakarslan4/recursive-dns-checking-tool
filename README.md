@@ -1,6 +1,8 @@
 # bulk-recursive-dns
 **Script Purpose:**
 
+**This script detects recursive DNS queries on a network and sends an email with the IP addresses that respond to those queries. This helps enhance network security by preemptively addressing potentially malicious requests.**
+
 This script is designed to perform the following tasks:
 
 1-) It reads a list of IP subnets.
