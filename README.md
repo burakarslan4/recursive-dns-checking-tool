@@ -10,7 +10,6 @@ Welcome to the **Recursive DNS IP Scanner Tool for Subnets** project! This tool 
 - [Getting Started](#getting-started)
 - [Configuration](#configuration)
 - [Results](#results)
-- [Dependencies](#dependencies)
 - [License](#license)
 
 ## Overview
@@ -54,15 +53,6 @@ You can configure the tool by editing the following variables in the script:
 ## Results
 
 If the tool finds valid IP addresses, you will receive an email with a list of those IP addresses. If no valid IPs are found, you will receive an email with the message "Good news! No IP addresses responding to recursive DNS queries were found."
-
-## Dependencies
-
-This tool uses Python and the following Python libraries:
-
-- `ipaddress`
-- `subprocess`
-- `smtplib`
-- `email`
 
 ## License
 
