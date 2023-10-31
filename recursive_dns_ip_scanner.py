@@ -53,11 +53,12 @@ if send_email_while_empty or valid_ips:
     msg['To'] = email_to
     msg['Subject'] = subject
 
-    # Add IP addresses to the email and valid_ips.txt file
-    ip_list_text = body + '\n'.join(valid_ips)
-    msg.attach(MIMEText(ip_list_text, 'plain'))
-    with open('valid_ips.txt', 'w') as file:
-        file.write(ip_list_text)
+    if valid_ips:
+        body_text = body + '\n'.join(valid_ips)
+    else:
+        body_text = "Good news! No IP addresses responding to recursive DNS queries were found."
+
+    msg.attach(MIMEText(body_text, 'plain'))
 
     # Connect to the email server and send the email (without SSL)
     try:
