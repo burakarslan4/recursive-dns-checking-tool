@@ -1,6 +1,8 @@
 # Recursive DNS Checking Tool for Subnets
 
-**This script works with Python 3.6**
+**This script works with:**
+
+ ![Python](https://img.shields.io/badge/Python-3.6%2B-blue?logo=python)
 
 **Script Purpose:**
 
