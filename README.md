@@ -1,4 +1,7 @@
 # Recursive DNS Checking Tool for Subnets
+
+**This script works with Python 3.6**
+
 **Script Purpose:**
 
 **This script detects recursive DNS queries on a network and sends an email with the IP addresses that respond to those queries. This helps enhance network security by preemptively addressing potentially malicious requests.**
