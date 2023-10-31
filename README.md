@@ -1,25 +1,25 @@
 # Recursive DNS IP Scanner Tool for Subnets
 
-The **Recursive DNS IP Scanner Tool for Subnets** is a Python script designed to scan a list of IP subnets, perform recursive DNS queries on each IP address within those subnets, and send an email with the results. The tool is especially useful for identifying IP addresses that respond to recursive DNS queries.
+Welcome to the **Recursive DNS IP Scanner Tool for Subnets** project! This tool is designed to find IP addresses that respond to recursive DNS queries. You can use it to scan multiple subnets and identify the IP addresses that provide DNS resolution.
 
 ## Table of Contents
 
-- [Description](#description)
+- [Overview](#overview)
+- [How It Works](#how-it-works)
 - [Requirements](#requirements)
-- [Usage](#usage)
+- [Getting Started](#getting-started)
 - [Configuration](#configuration)
+- [Results](#results)
+- [Dependencies](#dependencies)
 - [License](#license)
 
-## Description
+## Overview
 
-The **Recursive DNS IP Scanner Tool for Subnets** performs the following tasks:
+The **Recursive DNS IP Scanner Tool for Subnets** is a Python-based project that allows you to scan multiple subnets and identify IP addresses that respond to recursive DNS queries. It is a useful tool for network administrators and security professionals to discover DNS resolvers within a network.
 
-- Scans specified IP subnets for potential DNS resolvers.
-- Conducts recursive DNS queries on each IP address within the subnets.
-- Compiles a list of IP addresses that respond to recursive DNS queries.
-- Sends an email notification with the list of valid IP addresses.
+## How It Works
 
-The tool allows you to configure email settings, choose whether to use SSL for email communication, and decide whether to send an email even if no valid IP addresses are found.
+This tool works by scanning a list of specified subnets, probing each IP address within those subnets with recursive DNS queries. If an IP address responds to the queries, it is considered a valid result. You will be provided with a list of these IP addresses.
 
 ## Requirements
 
@@ -29,36 +29,45 @@ Before using this script, ensure you have the following requirements in place:
 - Required Python packages: `ipaddress`, `subprocess`, `smtplib`, `email.mime`
 - Internet access for conducting DNS queries
 
-## Usage
+## Getting Started
 
-### Configuration
+To get started with this tool, follow these steps:
 
-1. Clone the repository to your local machine.
-2. Open the script in a text editor.
-3. Configure the following variables at the top of the script:
-   - `email_user`: Your email username.
-   - `email_password`: Your email password.
-   - `email_to`: The recipient's email address.
-   - `email_server`: Your SMTP server address (e.g., 'smtp.example.com').
-   - `email_port`: Your SMTP server port (e.g., 587 for TLS or 465 for SSL).
-   - `use_ssl`: Set to `True` to use SSL for email communication, or `False` for non-SSL.
-   - `send_email_while_empty`: Set to `True` to send an email even if no valid IP addresses are found, or `False` to send only when valid IPs are found.
-   - `subnets`: List of IP subnets you want to scan.
-   - `subject`: The email subject.
-   
-4. Save the script.
+1. Clone this repository to your local machine.
+2. Update the configuration in the script to include your email account information, email server details, and the list of subnets to scan.
+3. Run the script to start the scanning process.
 
-### Running the Script
+If valid IP addresses are found, you will receive an email with the list of results. If no valid IP addresses are found, you will receive an email with a specific message.
 
-To run the script, follow these steps:
+## Configuration
 
-1. Open your terminal and navigate to the project directory.
-2. Run the script with the command: `python recursive_dns_ip_scanner.py`
+You can configure the tool by editing the following variables in the script:
 
-The script will scan the specified subnets, perform recursive DNS queries, and print the valid IP addresses that respond to recursive DNS queries. If configured to do so, it will also send an email with the results.
+- `email_user`: Your email account username.
+- `email_password`: Your email account password.
+- `email_to`: The recipient email address.
+- `email_server`: The email server for sending emails.
+- `email_port`: The port for the email server (e.g., 25 for plain text, 465 for SSL, 587 for TLS).
+- `send_email_while_empty`: Set to `True` to always send an email, even if no valid IPs are found.
+- `subnets`: The list of subnets to scan.
 
-### License
+## Results
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+If the tool finds valid IP addresses, you will receive an email with a list of those IP addresses. If no valid IPs are found, you will receive an email with the message "Good news! No IP addresses responding to recursive DNS queries were found."
+
+## Dependencies
+
+This tool uses Python and the following Python libraries:
+
+- `ipaddress`
+- `subprocess`
+- `smtplib`
+- `email`
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Feel free to contribute to this project or report any issues you encounter.
 
 **This project has been written with the assistance of ChatGPT 3.5.**
