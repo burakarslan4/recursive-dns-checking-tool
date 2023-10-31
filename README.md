@@ -1,53 +1,64 @@
-# Recursive DNS Checking Tool for Subnets
+# Recursive DNS IP Scanner Tool for Subnets
 
-**This script works with Python 3.6**
+The **Recursive DNS IP Scanner Tool for Subnets** is a Python script designed to scan a list of IP subnets, perform recursive DNS queries on each IP address within those subnets, and send an email with the results. The tool is especially useful for identifying IP addresses that respond to recursive DNS queries.
 
-**Script Purpose:**
+## Table of Contents
 
-**This script detects recursive DNS queries on a network and sends an email with the IP addresses that respond to those queries. This helps enhance network security by preemptively addressing potentially malicious requests.**
+- [Description](#description)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [License](#license)
 
-This script is designed to perform the following tasks:
+## Description
 
-1-) It reads a list of IP subnets.
+The **Recursive DNS IP Scanner Tool for Subnets** performs the following tasks:
 
-2-) For each IP subnet, it tries to resolve DNS queries using the dig command to check if any valid IP addresses can be reached.
+- Scans specified IP subnets for potential DNS resolvers.
+- Conducts recursive DNS queries on each IP address within the subnets.
+- Compiles a list of IP addresses that respond to recursive DNS queries.
+- Sends an email notification with the list of valid IP addresses.
 
-3-) If a valid IP is found, it compiles a list of these IPs.
+The tool allows you to configure email settings, choose whether to use SSL for email communication, and decide whether to send an email even if no valid IP addresses are found.
 
-4-) It sends an email containing the list of valid IP addresses to a specified recipient.
+## Requirements
 
-**How to Use the Script:**
+Before using this script, ensure you have the following requirements in place:
 
-**1-) Set up Email Configuration:**
+- Python 3.x
+- Required Python packages: `ipaddress`, `subprocess`, `smtplib`, `email.mime`
+- Internet access for conducting DNS queries
 
-- Replace email_user with your email address.
-- Replace email_password with your email account password or an app-specific password if applicable.
-- Replace email_to with the recipient's email address.
-- Configure the email_server and email_port to match your email service provider's settings.
+## Usage
 
-**2-) Define IP Subnets:**
+### Configuration
 
-- Edit the subnets list to include the IP subnets you want to scan.
+1. Clone the repository to your local machine.
+2. Open the script in a text editor.
+3. Configure the following variables at the top of the script:
+   - `email_user`: Your email username.
+   - `email_password`: Your email password.
+   - `email_to`: The recipient's email address.
+   - `email_server`: Your SMTP server address (e.g., 'smtp.example.com').
+   - `email_port`: Your SMTP server port (e.g., 587 for TLS or 465 for SSL).
+   - `use_ssl`: Set to `True` to use SSL for email communication, or `False` for non-SSL.
+   - `send_email_while_empty`: Set to `True` to send an email even if no valid IP addresses are found, or `False` to send only when valid IPs are found.
+   - `subnets`: List of IP subnets you want to scan.
+   - `subject`: The email subject.
+   
+4. Save the script.
 
-**3-) Run the Script:**
+### Running the Script
 
-- Execute the script using a Python interpreter.
+To run the script, follow these steps:
 
-**4-) Check the Output:**
+1. Open your terminal and navigate to the project directory.
+2. Run the script with the command: `python recursive_dns_ip_scanner.py`
 
-- The script will attempt to resolve DNS queries for each IP address in the specified subnets.
-- If a valid IP address is found, it will be added to the list of valid IPs.
-- An email containing the list of valid IP addresses will be sent to the specified recipient.
+The script will scan the specified subnets, perform recursive DNS queries, and print the valid IP addresses that respond to recursive DNS queries. If configured to do so, it will also send an email with the results.
 
-**5-) Error Handling:**
+### License
 
-- If there are any errors during the email sending process, the script will display an error message.
-
-**Important Notes:**
-
-- Make sure you have the dig command available on your system.
-- Ensure that the necessary email configuration details are accurate and allowed by your email service provider.
-
-In summary, this script is a tool for checking and notifying you of valid IP addresses within specific subnets, and it can be customized to suit your needs by adjusting the email configuration and the list of subnets to scan.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 **This project has been written with the assistance of ChatGPT 3.5.**
