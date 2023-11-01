@@ -46,7 +46,7 @@ You can configure the tool by editing the following variables in the script:
 - `email_password`: Your email account password.
 - `email_to`: The recipient email address.
 - `email_server`: The email server for sending emails.
-- `email_port`: The port for the email server (e.g., 25 for plain text, 465 for SSL, 587 for TLS).
+- `email_port`: The port for the email server (e.g., 25 or 587 for plain text. SSL and TLS not support yet).
 - `send_email_while_empty`: Set to `True` to always send an email, even if no valid IPs are found.
 - `subnets`: The list of subnets to scan.
 
